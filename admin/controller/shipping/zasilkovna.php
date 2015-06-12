@@ -1,6 +1,6 @@
 <?php
 class ControllerShippingZasilkovna extends Controller {
-	public 	$countries 		= array('cz'=>'Česká republika','sk'=>'Slovenská republika',''=>'vše');
+	public 	$countries 		= array('cz'=>'Česká republika', 'hu'=>'Maďarsko', 'pl'=>'Polsko', 'sk'=>'Slovenská republika', ''=>'vše');
 	public  $_servicesCnt 	= 6;	
 	public 	$inputFields 	= array('price'=>'price','js'=>'js','title'=>'title','destination'=>'destination','freeover'=>'freeover');
 	private $error 			= array(); 
