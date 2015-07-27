@@ -15,12 +15,12 @@ class ControllerShippingZasilkovna extends Controller {
 				
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && ($this->validate())) {
 			$this->model_setting_setting->editSetting('zasilkovna', $this->request->post);
-					
+			
 			$this->session->data['success'] = $this->language->get('text_success');
-						
+			
 			$this->response->redirect($this->url->link('extension/shipping', 'token=' . $this->session->data['token'], 'SSL'));
 		}
-				
+		
 		$data['heading_title'] = $this->language->get('heading_title');
 
 		$data['text_edit'] = $this->language->get('text_edit');
@@ -66,22 +66,22 @@ class ControllerShippingZasilkovna extends Controller {
 		
 
 		for($i=0;$i<$this->_servicesCnt;$i++){
-			foreach ($this->inputFields as $input_field => $value) {				
-				$input_field_name = "zasilkovna_".$input_field."_".$i;				
+			foreach ($this->inputFields as $input_field => $value) {
+				$input_field_name = "zasilkovna_".$input_field."_".$i;
 				if (isset($this->request->post[$input_field_name])) {
 					$data[$input_field_name] = $this->request->post[$input_field_name];
 				} else {
 					$data[$input_field_name] = $this->config->get($input_field_name);
 				}
-				$input_field_name = "zasilkovna_enabled_".$i;				
+				$input_field_name = "zasilkovna_enabled_".$i;
 				if (isset($this->request->post[$input_field_name])) {
 					$data[$input_field_name] = $this->request->post[$input_field_name];
 				} else {
 					$data[$input_field_name] = $this->config->get($input_field_name);
 				}
-	        }  
+			}
 		
-        } 
+		}
 
 		if (isset($this->request->post['zasilkovna_api_key'])) {
 			$data['zasilkovna_api_key'] = $this->request->post['zasilkovna_api_key'];
@@ -99,6 +99,11 @@ class ControllerShippingZasilkovna extends Controller {
 			$data['zasilkovna_geo_zone_id'] = $this->request->post['zasilkovna_geo_zone_id'];
 		} else {
 			$data['zasilkovna_geo_zone_id'] = $this->config->get('zasilkovna_geo_zone_id');
+		}	
+		if (isset($this->request->post['zasilkovna_weight_max'])) {
+			$data['zasilkovna_weight_max'] = $this->request->post['zasilkovna_weight_max'];
+		} else {
+			$data['zasilkovna_weight_max'] = $this->config->get('zasilkovna_weight_max');
 		}	
 		if (isset($this->request->post['zasilkovna_status'])) {
 			$data['zasilkovna_status'] = $this->request->post['zasilkovna_status'];
