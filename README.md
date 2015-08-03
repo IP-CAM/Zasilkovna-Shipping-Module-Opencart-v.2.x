@@ -22,7 +22,8 @@
     Nyní je doprava přes zásilkovnu nabízena vašim zákazníkům. Cílová pobočka bude uvedena vždy v <strong>poznámce objednávky</strong>.
   </li>
   <li>
-    <strong style="color: red">Možný problém: </strong> pokud v košíku OpenCart po volbě dopravy Zásilkovnou tvrdí, že není vybrána doprava, zkontrolujte, zda nemáte v názvu způsobu dopravy tečku, např. <code>Zásilkovna.cz</code>. Pokud ano, odstraňte ji, OpenCart používá tečku pro oddělování položek a špatně pak název rozpozná. 
+    <strong style="color: red">Možný problém: </strong> pokud v košíku OpenCart po volbě dopravy Zásilkovnou tvrdí, že není vybrána doprava, zkontrolujte, zda nemáte v názvu způsobu dopravy tečku, např. <code>Zásilkovna.cz</code>. Pokud ano, odstraňte ji, OpenCart používá tečku pro oddělování položek a špatně pak název rozpozná.
+    </li>
 </ol>
 <h2>Informace o modulu</h2>
 <p>Podporované jazyky:</p>
