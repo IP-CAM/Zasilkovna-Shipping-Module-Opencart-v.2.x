@@ -140,7 +140,11 @@ function addHooks(){ //called when no zasilkovna method is selected. Dunno how t
 				var selected_id = this.packetery.option("selected-id");
 				var tr = $(this).closest(\'tr\');
 				var radioButt = $(tr).find(\'input[name="shipping_method"]:radio\');
-				if(selected_id)$(radioButt).attr("checked",\'checked\');
+				if(selected_id){
+					$(radioButt).attr("checked",\'checked\');
+					$(this).prev().find("input[type=\'radio\']").prop("checked", true);
+					$(this).prev().find("input[type=\'radio\']").change();
+				}
 				setTimeout(setRequiredOpt, 1);
 			};
 			this.packetery.on("branch-change", fn);
