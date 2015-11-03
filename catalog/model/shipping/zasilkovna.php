@@ -171,14 +171,16 @@ function addHooks(){ //called when no zasilkovna method is selected. Dunno how t
 					$JS.=$HELPER_JS;
 					$addedHelperJS=true;
 				}
-				$JS .= '<script>
-					var radio = $(\'input:radio[name="shipping_method"][value="zasilkovna.'.$title.$i.'"]\');
-					var parent_div = radio.parent().parent(); 
-					if(parent_div.find(\'#zasilkovna_box\').length == 0){
-						$(parent_div).append(\'<div id="zasilkovna_box" class="packetery-branch-list list-type=3 connect-field=textarea[name=comment] country='.$country.'" style="border: 1px dotted black;">Načítání: seznam poboček osobního odběru</div> \');
-						$(parent_div).append(\'<p id="select_branch_message" style="color:red; font-weight:bold; display:none">Vyberte pobočku</p>\');
-					}
-				</script>';
+				if($this->config->get('zasilkovna_branches_enabled_'.$i)){
+					$JS .= '<script>
+						var radio = $(\'input:radio[name="shipping_method"][value="zasilkovna.'.$title.$i.'"]\');
+						var parent_div = radio.parent().parent(); 
+						if(parent_div.find(\'#zasilkovna_box\').length == 0){
+							$(parent_div).append(\'<div id="zasilkovna_box" class="packetery-branch-list list-type=3 connect-field=textarea[name=comment] country='.$country.'" style="border: 1px dotted black;">Načítání: seznam poboček osobního odběru</div> \');
+							$(parent_div).append(\'<p id="select_branch_message" style="color:red; font-weight:bold; display:none">Vyberte pobočku</p>\');
+						}
+					</script>';
+				}
 				$quote_data[$title.$i] = array(
 					'id'            => 'zasilkovna.'.$title.$i,
 					'code'            => 'zasilkovna.'.$title.$i,

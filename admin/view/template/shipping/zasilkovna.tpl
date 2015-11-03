@@ -34,7 +34,8 @@ echo $header; ?><?php echo $column_left; ?>
 							<th class="col-sm-2">Cena</th>
 							<th class="col-sm-2">Zdarma od</th>
 							<th class="col-sm-2">Cílová země</th>
-							<th class="col-sm-2">Zobrazit</th>
+							<th class="col-sm-1">Zobrazit pobočky</th>
+							<th class="col-sm-1">Zobrazit</th>
 						</thead>
 						<tbody>
 							<?php
@@ -75,6 +76,19 @@ echo $header; ?><?php echo $column_left; ?>
 										}
 									?> 
 									</select>
+								</td>
+								<td>
+									<?php
+										$input_field_name = "zasilkovna_branches_enabled_".$i;
+									?>
+									<select class="form-control" name="<?php echo $input_field_name;?>">
+									<?php if (${$input_field_name}) { ?>
+										<option value="1" selected="selected">ano</option>
+										<option value="0">ne</option>
+										<?php } else { ?>
+										<option value="1">ano</option>
+										<option value="0" selected="selected">ne</option>
+									<?php } ?>
 								</td>
 								<td>
 									<?php

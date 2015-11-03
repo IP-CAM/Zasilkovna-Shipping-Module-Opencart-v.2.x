@@ -84,6 +84,13 @@ class ControllerShippingZasilkovna extends Controller {
 				} else {
 					$data[$input_field_name] = $this->config->get($input_field_name);
 				}
+				
+				$input_field_name = "zasilkovna_branches_enabled_".$i;
+				if (isset($this->request->post[$input_field_name])) {
+					$data[$input_field_name] = $this->request->post[$input_field_name];
+				} else {
+					$data[$input_field_name] = $this->config->get($input_field_name);
+				}
 			}
 		
 		}
