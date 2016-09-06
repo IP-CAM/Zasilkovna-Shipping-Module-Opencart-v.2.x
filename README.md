@@ -1,7 +1,11 @@
 <h1>Modul pro Opencart 2</h1>
 <h2>Instalace</h2>
 <ol style="color: black; ">
-  <li><a href="https://github.com/Zasilkovna/opencart2/archive/master.zip">Stáhnout soubor modulu &raquo;</a></li>
+  <li>
+    <ul>
+      <li><a href="https://github.com/Zasilkovna/opencart2/archive/opencart2.3.zip">Stáhnout soubor modulu pro Opencart 2.3.x &raquo;</a></li>
+      <li><a href="https://github.com/Zasilkovna/opencart2/archive/master.zip">Stáhnout soubor modulu pro Opencart 2.0-2.2.x &raquo;</a></li>
+  </li>
   <li>
     Obsah adresáře <code>opencart2-master</code> nakopírujte do kořenového adresáře vašeho obchodu opencart.<br>
   </li>
