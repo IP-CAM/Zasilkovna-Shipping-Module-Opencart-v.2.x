@@ -1,7 +1,7 @@
 <?php
-class ModelShippingZasilkovna extends Model {
+class ModelExtensionShippingZasilkovna extends Model {
 	function getQuote($address) {
-		$this->load->language('shipping/zasilkovna');
+		$this->load->language('extension/shipping/zasilkovna');
 		$weight = $this->cart->getWeight();
 		$max_weight = $this->config->get('zasilkovna_weight_max');
 		$valid_weight = (!$max_weight && $max_weight !== 0) || ($max_weight > 0 && $weight <= $max_weight); // weight condition check, yay logic
@@ -187,7 +187,7 @@ function addHooks(){ //called when no zasilkovna method is selected. Dunno how t
 					'title'           => $title,
 					'cost'            => $cost,
 					'tax_class_id'    => $this->config->get('zasilkovna_tax_class_id'),
-					'text'            => $JS.$this->currency->format($this->tax->calculate($cost, $this->config->get('zasilkovna_tax_class_id'), $this->config->get('config_tax')))
+					'text'            => $JS.$this->currency->format($this->tax->calculate($cost, $this->config->get('zasilkovna_tax_class_id'), $this->config->get('config_tax')), $this->session->data['currency'])
 				);
 			}
 

@@ -1,12 +1,12 @@
 <?php
-class ControllerShippingZasilkovna extends Controller {
+class ControllerExtensionShippingZasilkovna extends Controller {
 	public 	$countries 		= array('cz'=>'Česká republika', 'hu'=>'Maďarsko', 'pl'=>'Polsko', 'sk'=>'Slovenská republika', ''=>'vše');
 	public  $_servicesCnt 	= 6;	
 	public 	$inputFields 	= array('price'=>'price','js'=>'js','title'=>'title','destination'=>'destination','freeover'=>'freeover');
 	private $error 			= array(); 
 
 	public function index() {
-		$this->load->language('shipping/zasilkovna');
+		$this->load->language('extension/shipping/zasilkovna');
 
 		//$this->document->title = $this->language->get('heading_title');
 		$this->document->setTitle($this->language->get('heading_title'));
@@ -18,7 +18,7 @@ class ControllerShippingZasilkovna extends Controller {
 			
 			$this->session->data['success'] = $this->language->get('text_success');
 			
-			$this->response->redirect($this->url->link('extension/shipping', 'token=' . $this->session->data['token'], 'SSL'));
+			$this->response->redirect($this->url->link('extension/extension', 'token=' . $this->session->data['token'] . '&type=shipping', 'SSL'));
 		}
 		
 		$data['heading_title'] = $this->language->get('heading_title');
@@ -52,17 +52,17 @@ class ControllerShippingZasilkovna extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_shipping'),
-			'href' => $this->url->link('extension/shipping', 'token=' . $this->session->data['token'], 'SSL')
+			'href' => $this->url->link('extension/extension', 'token=' . $this->session->data['token'] . '&type=shipping', 'SSL')
 		);
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('shipping/zasilkovna', 'token=' . $this->session->data['token'], 'SSL')
+			'href' => $this->url->link('extension/shipping/zasilkovna', 'token=' . $this->session->data['token'], 'SSL')
 		);
 
-		$data['action'] = $this->url->link('shipping/zasilkovna', 'token=' . $this->session->data['token'], 'SSL');
+		$data['action'] = $this->url->link('extension/shipping/zasilkovna', 'token=' . $this->session->data['token'], 'SSL');
 
-		$data['cancel'] = $this->url->link('extension/shipping', 'token=' . $this->session->data['token'], 'SSL');
+		$data['cancel'] = $this->url->link('extension/extension', 'token=' . $this->session->data['token'] . '&type=shipping', 'SSL');
 		
 
 		for($i=0;$i<$this->_servicesCnt;$i++){
@@ -132,7 +132,7 @@ class ControllerShippingZasilkovna extends Controller {
 		$data['tax_classes'] = $this->model_localisation_tax_class->getTaxClasses();
 		$this->load->model('localisation/geo_zone');
 		$data['geo_zones'] = $this->model_localisation_geo_zone->getGeoZones();
-		$this->template = 'shipping/zasilkovna.tpl';
+		$this->template = 'extension/shipping/zasilkovna.tpl';
 		
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
@@ -143,7 +143,7 @@ class ControllerShippingZasilkovna extends Controller {
 	}
 	
 	protected function validate() {
-		if (!$this->user->hasPermission('modify', 'shipping/zasilkovna')) {
+		if (!$this->user->hasPermission('modify', 'extension/shipping/zasilkovna')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 

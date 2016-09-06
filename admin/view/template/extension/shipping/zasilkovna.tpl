@@ -1,6 +1,6 @@
 <?php
 $registry = new Registry();
-$zasilkovna = new ControllerShippingZasilkovna($registry);
+$zasilkovna = new ControllerExtensionShippingZasilkovna($registry);
 echo $header; ?><?php echo $column_left; ?>
 <div id="content">
 	<div class="page-header">
