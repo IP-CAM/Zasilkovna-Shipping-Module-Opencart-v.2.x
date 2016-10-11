@@ -86,11 +86,25 @@ function setRequiredOpt(){
 
 function submitForm(){
 	if(!SubmitButtonDisabled){
+		updateConnectedField();
 		$(\'#shipping\').submit();
 	}
 }
 
 function updateConnectedField(opts, id) {
+	var branches;
+	if(typeof(opts) == "undefined"){
+		$(".packetery-branch-list").each(function() {
+			if(this.packetery.option("selected-id")){
+				opts = {
+					connectField: "textarea[name=comment]",
+					selectedId: this.packetery.option("selected-id")
+				};
+				branches = this.packetery.option("branches");
+			}
+		});
+	}
+
 	if (opts.connectField) {
 		if (typeof(id) == "undefined") {
 			id = opts.selectedId
@@ -151,6 +165,11 @@ function addHooks(){ //called when no zasilkovna method is selected. Dunno how t
 			fn.call(this);
 		}
 	);
+	
+	$("#content").delegate("textarea[name=comment]", "change", function () { 
+		updateConnectedField();
+	});
+
 }
 </script>';
 
