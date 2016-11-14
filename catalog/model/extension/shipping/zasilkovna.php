@@ -5,6 +5,7 @@ class ModelExtensionShippingZasilkovna extends Model {
 		$weight = $this->cart->getWeight();
 		$max_weight = $this->config->get('zasilkovna_weight_max');
 		$valid_weight = (!$max_weight && $max_weight !== 0) || ($max_weight > 0 && $weight <= $max_weight); // weight condition check, yay logic
+
 		
 		if ($this->config->get('zasilkovna_status') && $valid_weight) {
 			$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "zone_to_geo_zone WHERE geo_zone_id = '" . (int)$this->config->get('zasilkovna_geo_zone_id') . "' AND country_id = '" . (int)$address['country_id'] . "' AND (zone_id = '" . (int)$address['zone_id'] . "' OR zone_id = '0')");
@@ -176,7 +177,10 @@ function addHooks(){ //called when no zasilkovna method is selected. Dunno how t
 			$addedHelperJS = false;
 			for($i = 0; $i <= 10 ;$i++){
 				$enabled = $this->config->get('zasilkovna_enabled_'.$i);
-				if (empty($enabled) || $enabled == 0) continue;
+				$config_destination = $this->config->get('zasilkovna_destination_'.$i);
+                $cart_destination = strtolower($this->cart->session->data["shipping_address"]["iso_code_2"]);
+
+				if (empty($enabled) || $enabled == 0 || $config_destination != $cart_destination) continue;
 
 				$cost = 0;
 				if($this->config->get('zasilkovna_freeover_'.$i) == 0 || $this->cart->getTotal() < $this->config->get('zasilkovna_freeover_'.$i)) // shipment is not free
