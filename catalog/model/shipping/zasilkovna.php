@@ -180,7 +180,7 @@ function addHooks(){ //called when no zasilkovna method is selected. Dunno how t
 				$config_destination = $this->config->get('zasilkovna_destination_' . $i);
 				$cart_destination = strtolower($this->cart->session->data["shipping_address"]["iso_code_2"]);
 
-				if (empty($enabled) || $enabled == 0 || $config_destination != $cart_destination) continue;
+				if (empty($enabled) || $enabled == 0 || ($config_destination && $cart_destination && $config_destination != $cart_destination)) continue;
 
 				$cost = 0;
 				if($this->config->get('zasilkovna_freeover_' . $i) == 0 || $this->cart->getTotal() < $this->config->get('zasilkovna_freeover_' . $i)) // shipment is not free
