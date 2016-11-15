@@ -101,7 +101,7 @@ class ControllerShippingZasilkovna extends Controller {
 			$data['zasilkovna_api_key'] = $this->config->get('zasilkovna_api_key');
 		}
 
-    	//save additional info
+		//save additional info
 		if (isset($this->request->post['zasilkovna_tax_class_id'])) {
 			$data['zasilkovna_tax_class_id'] = $this->request->post['zasilkovna_tax_class_id'];
 		} else {
@@ -138,7 +138,6 @@ class ControllerShippingZasilkovna extends Controller {
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');
 		
-		//$this->response->setOutput($this->render(TRUE), $this->config->get('config_compression'));
 		$this->response->setOutput($this->load->view($this->template, $data));
 	}
 	
