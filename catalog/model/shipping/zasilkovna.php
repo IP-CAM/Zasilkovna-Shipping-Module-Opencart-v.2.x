@@ -210,7 +210,7 @@ function addHooks(){ //called when no zasilkovna method is selected. Dunno how t
 					'title' => $title,
 					'cost' => $cost,
 					'tax_class_id' => $this->config->get('zasilkovna_tax_class_id'),
-					'text' => $JS . $this->currency->format($this->tax->calculate($cost, $this->config->get('zasilkovna_tax_class_id'), $this->config->get('config_tax')))
+					'text' => $JS . $this->currency->format($this->tax->calculate($cost, $this->config->get('zasilkovna_tax_class_id'), $this->config->get('config_tax')), $this->session->data['currency']),
 				);
 			}
 
