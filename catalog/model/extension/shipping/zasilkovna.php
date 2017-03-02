@@ -29,7 +29,7 @@ class ModelExtensionShippingZasilkovna extends Model {
 			$text = $this->language->get('text_description') . ' : ';
 			$api_key = $this->config->get('zasilkovna_api_key');
 			
-			$HELPER_JS = '<script> (function(d){ var el, id = "packetery-jsapi", head = d.getElementsByTagName("head")[0]; if(d.getElementById(id)){ return; } el = d.createElement("script"); el.id = id; el.async = true; el.src = "http://www.zasilkovna.cz/api/' . $api_key . '/branch.js?callback=addHooks"; head.insertBefore(el, head.firstChild); }(document)); </script>
+			$HELPER_JS = '<script> (function(d){ var el, id = "packetery-jsapi", head = d.getElementsByTagName("head")[0]; if(d.getElementById(id)){ return; } el = d.createElement("script"); el.id = id; el.async = true; el.src = "//www.zasilkovna.cz/api/' . $api_key . '/branch.js?callback=addHooks"; head.insertBefore(el, head.firstChild); }(document)); </script>
 <script language="javascript" type="text/javascript">   ;
 if(typeof window.packetery != "undefined"){
 	setTimeout(function(){initBoxes()},1000)
