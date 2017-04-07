@@ -3,8 +3,16 @@
 <ol style="color: black; ">
   <li>
     <ul>
-      <li><a href="https://github.com/Zasilkovna/opencart2/archive/opencart2.3.zip">Stáhnout soubor modulu pro Opencart 2.3.x &raquo;</a></li>
-      <li><a href="https://github.com/Zasilkovna/opencart2/archive/master.zip">Stáhnout soubor modulu pro Opencart 2.0-2.2.x &raquo;</a></li>
+      <li><a href="https://github.com/Zasilkovna/opencart2/archive/opencart2.3.zip">Stáhnout soubor modulu pro Opencart 2.3.x &raquo;</a>
+      	<ul>
+      		<li><a href="https://github.com/Zasilkovna/opencart2/archive/AJAX-quick-checkout-opencart2.3.zip">Stáhnout upravenou verzi pro modul AJAX quick checkout (Opencart 2.3) &raquo;</a></li> 
+      	</ul>
+      </li>
+      <li><a href="https://github.com/Zasilkovna/opencart2/archive/master.zip">Stáhnout soubor modulu pro Opencart 2.0-2.2.x &raquo;</a>
+      	<ul>
+      		<li><a href="https://github.com/Zasilkovna/opencart2/archive/AJAX-quick-checkout.zip">Stáhnout upravenou verzi pro modul AJAX quick checkout (Opencart 2.0-2.2.x) &raquo;</a></li> 
+      	</ul>
+      </li>
     </ul>
   </li>
   <li>
