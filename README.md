@@ -1,14 +1,10 @@
-<h1>Modul pro Opencart 2</h1>
+<h1>Modul pro Opencart 2.3</h1>
 <h2>Instalace</h2>
 <ol style="color: black; ">
-  <li>
-    <ul>
-      <li><a href="https://github.com/Zasilkovna/opencart2/archive/opencart2.3.zip">Stáhnout soubor modulu pro Opencart 2.3.x &raquo;</a></li>
-      <li><a href="https://github.com/Zasilkovna/opencart2/archive/master.zip">Stáhnout soubor modulu pro Opencart 2.0-2.2.x &raquo;</a></li>
-    </ul>
+  <li><a href="https://github.com/Zasilkovna/opencart2/archive/opencart2.3.zip">Stáhnout soubor modulu pro Opencart 2.3 &raquo;</a>
   </li>
   <li>
-    Obsah adresáře <code>opencart2-master</code> nakopírujte do kořenového adresáře vašeho obchodu opencart.<br>
+    Obsah adresáře z archivu nakopírujte do kořenového adresáře vašeho obchodu opencart.<br>
   </li>
   <li>
     Přihlašte se do administrace, přejděte na stránku Extensions » Shipping a modul nainstalujte.<br>
@@ -38,7 +34,7 @@
 </ul>
 <h3>Podporované verze:</h3>
 <ul>
-  <li>Opencart 2.0.0 a novější</li>
+  <li>Opencart 2.3.0 a novější</li>
   <li>Při problému s použitím v jiné verzi nás kontaktujte na adrese <a href="mailto:technicka.podpora@zasilkovna.cz">technicka.podpora@zasilkovna.cz</a></li>
 </ul>
 <h3>Poskytované funkce:</h3>
