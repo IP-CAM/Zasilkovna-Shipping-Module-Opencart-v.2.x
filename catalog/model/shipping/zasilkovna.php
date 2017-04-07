@@ -36,28 +36,41 @@ class ModelShippingZasilkovna extends Model {
 			$HELPER_JS = '<script> (function(d){ var el, id = "packetery-jsapi", head = d.getElementsByTagName("head")[0]; if(d.getElementById(id)){ return; } el = d.createElement("script"); el.id = id; el.async = true; el.src = "//www.zasilkovna.cz/api/' . $api_key . '/branch.js?callback=addHooks"; head.insertBefore(el, head.firstChild); }(document)); </script>
 <script language="javascript" type="text/javascript">   ;
 if(typeof window.packetery != "undefined"){
-	setTimeout(function(){initBoxes()},1000)
+  setTimeout(function(){initBoxes()},1000)
 }else{
-	setTimeout(function(){setRequiredOpt()},500)
+  setTimeout(function(){setRequiredOpt();},500)
 }
 function initBoxes(){
-	var api = window.packetery;
-	divs = $(\'#zasilkovna_box\');
-	$(\'.packetery-branch-list\').each(function(){
-
-		api.initialize(api.jQuery(this));
-		this.packetery.option("selected-id",0);
-	});
-	addHooks();  
-	setRequiredOpt();
+   var api = window.packetery;
+   divs = $(\'#zasilkovna_box\');
+   $(\'.packetery-branch-list\').each(function() {
+       api.initialize(api.jQuery(this));
+       this.packetery.option("selected-id",0);
+    });
+   addHooks();  
+   setRequiredOpt();
 }
+function overrideAQCValidate(){
+  var oldValidateAllFields = validateAllFields;
+  console.log(\'Packetery override: "validateAllFields" overridden!\');
+  validateAllFields = function(param){
+    console.log(\'Packetery override: packetery not selected.\');
+    if(!$(select_branch_message).is(\':visible\')){
+      oldValidateAllFields(param);
+    }
+    else{
+      alert(\'Vyberte pobo\u010Dku z\u00E1silkovny!\')
+    }
+  }
+}
+
 var SubmitButtonDisabled = true;
 function setRequiredOpt(){
 	var setOnce = false;
 	var disableButton=false;
 	var zasilkovna_selected = false;
 	var opts={
-		connectField: \'textarea[name=comment]\'
+		connectField: \'textarea#confirm_comment\'
 	}        
 	$("div.packetery-branch-list").each(
 		function(){
@@ -87,11 +100,12 @@ function setRequiredOpt(){
 		if(!zasilkovna_selected){
 			updateConnectedField(opts,0);
 		}
+     overrideAQCValidate();
 }
 
 function submitForm(){
 	if(!SubmitButtonDisabled){
-		updateConnectedField();
+		
 		$(\'#shipping\').submit();
 	}
 }
@@ -102,7 +116,7 @@ function updateConnectedField(opts, id){
 		$(".packetery-branch-list").each(function(){
 			if(this.packetery.option("selected-id")){
 				opts = {
-					connectField: "textarea[name=comment]",
+					connectField: "textarea#confirm_comment",
 					selectedId: this.packetery.option("selected-id")
 				};
 				branches = this.packetery.option("branches");
@@ -144,34 +158,32 @@ function updateConnectedField(opts, id){
 function addHooks(){ //called when no zasilkovna method is selected. Dunno how to call this from the branch.js
 
 //set each radio button to call setRequiredOpt if clicked
-	$(\'input[name="shipping_method"]:radio\').each(
-		function(){
-			$(this).click(setRequiredOpt);
-		}
-	);
-	button = $(\'[onclick="$(\\\'#shipping\\\').submit();"]\');
-	button.removeAttr("onclick");
-	button.click(submitForm);
+ $(\'input[name="shipping_method"]:radio\').each(
+        function(){
+          $(this).click(setRequiredOpt);         
+         }
+      );      
+      button = $(\'[onclick="$(\\\'#shipping\\\').submit();"]\');
+      button.removeAttr("onclick");
+      button.click(submitForm);
 
-	$("div.packetery-branch-list").each(
-		function(){
-			var fn = function(){
-				var selected_id = this.packetery.option("selected-id");
-				var tr = $(this).closest(\'tr\');
-				var radioButt = $(tr).find(\'input[name="shipping_method"]:radio\');
-				if(selected_id){
-					$(radioButt).attr("checked",\'checked\');
-					$(this).prev().find("input[type=\'radio\']").prop("checked", true);
-					$(this).prev().find("input[type=\'radio\']").change();
-				}
-				setTimeout(setRequiredOpt, 1);
-			};
-			this.packetery.on("branch-change", fn);
-			fn.call(this);
+
+      $("div.packetery-branch-list").each(            
+          function() {             
+            var fn = function(){       
+              var selected_id = this.packetery.option("selected-id");             
+              var tr = $(this).closest(\'div.radio-input\');              
+              var radioButt = $(tr).find(\'input[name="shipping_method"]:radio\');                   
+              if(selected_id)$(radioButt).attr("checked",\'checked\');
+              setTimeout(setRequiredOpt, 1);
+              setTimeout(function(){ $("#confirm_comment").change(); }, 1500);
+            };
+            this.packetery.on("branch-change", fn);
+            fn.call(this);
 		}
 	);
 	
-	$("#content").delegate("textarea[name=comment]", "change", function (){ 
+	$("#content").delegate("textarea#confirm_comment", "change", function (){ 
 		updateConnectedField();
 	});
 
@@ -203,7 +215,7 @@ function addHooks(){ //called when no zasilkovna method is selected. Dunno how t
 						var radio = $(\'input:radio[name="shipping_method"][value="zasilkovna.' . $title . $i . '"]\');
 						var parent_div = radio.parent().parent(); 
 						if(parent_div.find(\'#zasilkovna_box\').length == 0){
-							$(parent_div).append(\'<div id="zasilkovna_box" class="packetery-branch-list list-type=3 connect-field=textarea[name=comment] country=' . $country . '" style="border: 1px dotted black;">Načítání: seznam poboček osobního odběru</div> \');
+							$(parent_div).append(\'<div id="zasilkovna_box" class="packetery-branch-list list-type=3 connect-field=textarea#confirm_comment country=' . $country . '" style="border: 1px dotted black;">Načítání: seznam poboček osobního odběru</div> \');
 							$(parent_div).append(\'<p id="select_branch_message" style="color:red; font-weight:bold; display:none">Vyberte pobočku</p>\');
 						}
 					</script>';
@@ -231,5 +243,3 @@ function addHooks(){ //called when no zasilkovna method is selected. Dunno how t
 		return $method_data;
 	}
 }
-
-?>
