@@ -1,4 +1,4 @@
-<h1>Modul pro Opencart 2 s module AJAX quick checkout</h1>
+<h1>Modul pro Opencart 2 s modulem AJAX quick checkout</h1>
 <h2>Instalace</h2>
 <ol style="color: black; ">
   <li><a href="https://github.com/Zasilkovna/opencart2/archive/AJAX-quick-checkout.zip">Stáhnout soubor modulu</a>
