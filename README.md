@@ -1,45 +1,45 @@
-# [DEPRECATED] - modul již není udržován/no longer actively maintained
+# [DEPRECATED] - The module is no longer maintained / no Longer Actively Maintained
 
-<h1>Modul pro Opencart 2</h1>
-<h2>Instalace</h2>
-<ol style="color: black; ">
+<H1> Module for OpenCart 2 </ h1>
+<H2> Installation </ h2>
+<ol style = "color: black;">
   <li>
-    <ul>
-      <li><a href="https://github.com/Zasilkovna/opencart2/archive/opencart2.3.zip">Stáhnout soubor modulu pro Opencart 2.3.x &raquo;</a>
-      	<ul>
-      		<li><a href="https://github.com/Zasilkovna/opencart2/archive/AJAX-quick-checkout-opencart2.3.zip">Stáhnout upravenou verzi pro modul AJAX quick checkout (Opencart 2.3) &raquo;</a></li> 
-      	</ul>
-      </li>
-      <li><a href="https://github.com/Zasilkovna/opencart2/archive/master.zip">Stáhnout soubor modulu pro Opencart 2.0-2.2.x &raquo;</a>
-      	<ul>
-      		<li><a href="https://github.com/Zasilkovna/opencart2/archive/AJAX-quick-checkout.zip">Stáhnout upravenou verzi pro modul AJAX quick checkout (Opencart 2.0-2.2.x) &raquo;</a></li> 
-      	</ul>
-      </li>
-    </ul>
-  </li>
+    <Ul>
+      <li> <a href="https://github.com/zasilkovna/opencart2/archive/opencart2.zip"> Download file module for opencart 2.3.x & raquo; </a>
+      <Ul>
+      <li> <a href="https://github.com/zasilvnovna/opencart2/archive/ajax-quick-check-check-opencart2.3.zip"> Download Edited version for AJAX Quick Checkout (OpenCart 2.3) & Raquo; < / a> </ li>
+      </ ul>
+      </ li>
+      <li> <a href="https://github.com/zasilkovnna/opencart2/archive/master.zip"> Download file module for OpenCart 2.0-2.2.2.x & raquo; </a>
+      <Ul>
+      <li> <a href="https://github.com/Zasilvnovna/opencart2/archive/ajax-quick-check-check-check"> Download modified version for AJAX Quick Checkout (OpenCart 2.0-2.2.x) & raquo; < / a> </ li>
+      </ ul>
+      </ li>
+    </ ul>
+  </ li>
   <li>
-    Obsah adresáře <code>opencart2-master</code> nakopírujte do kořenového adresáře vašeho obchodu opencart.<br>
-  </li>
+    Content Address Book <code> OpenCart2-Master </ code> Copy to the root of your OpenCart store. Home
+  </ li>
   <li>
-    Přihlašte se do administrace, přejděte na stránku Extensions » Shipping a modul nainstalujte.<br>
-    <a href="https://cloud.githubusercontent.com/assets/11771520/8772625/045ed8cc-2ece-11e5-9f01-bb90e556e2a1.png"><img width=200 height=200 src="https://cloud.githubusercontent.com/assets/11771520/8772625/045ed8cc-2ece-11e5-9f01-bb90e556e2a1.png"></a><br><br>
-    <a href="https://cloud.githubusercontent.com/assets/11771520/8772624/03292192-2ece-11e5-8612-c09330155585.png"><img width=600 height=46 src="https://cloud.githubusercontent.com/assets/11771520/8772624/03292192-2ece-11e5-8612-c09330155585.png"></a><br><br>
-  </li>
+    Subscribe to the administration, go to Extensions »Shipping and install the module. Home
+    <a href="https://cloud.githubusercontent.com/assets/11771520/8772625/045ED8CC-2EC-11E5-9F01-BB90E556E2A1.png"> <Img Width = 200 Height = 200 src = "https: // Cloud .GithubuserContent.com / Assets / 11771520/8772625 / 045ed8CC-2Ece-11E5-9F01-BB90E56E2A1.png "> </a> <br>
+    <a href="https://cloud.githubusercontent.com/assets/11771520/8772624/03292192-2ECE-11E5-8612-C09330155585.png"> <img width = 600 height = 46 src = "https: // cloud .GithubuserContent.com / Assets / 11771520/8772624 / 03292192-2Ece-11E5-8612-C09330155585.png "> </a> <br> <br>
+  </ li>
   <li>
-    Po nainstalování modulu (zelené +) klikněte na modré tlačítko <i><strong>edit</strong></i><br><br>
-  </li>
+    After installing the module (green +), click Blue <I> <Strong> Edit </ strong> </ i> <br> <br> <br>
+  </ li>
   <li>
-    Na stránce editace zadejte název dopravy, cenu, vyberte zemi, ze které mají být nabízeny pobočky a danou dopravní metodu povolte.
-    Dále zadejte klíč api a povolte celý modul. Navíc můžete zadat daň dopravy.<br><br>
-    <a href="https://cloud.githubusercontent.com/assets/11771520/8772621/00d3b164-2ece-11e5-8172-eaff1100ec6f.png"><img width=400 height=250 src="https://cloud.githubusercontent.com/assets/11771520/8772621/00d3b164-2ece-11e5-8172-eaff1100ec6f.png"></a><br><br>
-  </li>
+    On the Edit page, enter the traffic name, price, select a country from which they are offered by branches and the traffic method.
+    Next, enter the API key and loosen the entire module. In addition, you can enter traffic tax. <br> <br>
+    <a href="https://cloud.githubusercontent.com/assets/11771520/8772621/8772621/8772621/00D3B164-2ECE-11E5-8E5-8EF1100EC6F.png"> <img width = 400 height = 250 src = "https: // Cloud .GithubuserContent.com / Assets / 11771520/8772621 / 00D3B164-2Ece-11E5-8172-EAFF1100EC6F.png "> </a> <br>
+  </ li>
   <li>
-    Nyní je doprava přes zásilkovnu nabízena vašim zákazníkům. Cílová pobočka bude uvedena vždy v <strong>poznámce objednávky</strong>.
-  </li>
+    Now the right over the shipbody is offered to your customers. The target branch will always be listed in <Strong> Order note </ strong>.
+  </ li>
   <li>
-    <strong style="color: red">Možný problém: </strong> pokud v košíku OpenCart po volbě dopravy Zásilkovnou tvrdí, že není vybrána doprava, zkontrolujte, zda nemáte v názvu způsobu dopravy tečku, např. <code>Zásilkovna.cz</code>. Pokud ano, odstraňte ji, OpenCart používá tečku pro oddělování položek a špatně pak název rozpozná.
-    </li>
-</ol>
+    <Strong Style = "Color: Red"> Possible problem: </ strong> If in the OpenCart basket after choosing transport, it claims that it is not selected to the right, check that you do not have the dot mode name, eg <Code> MailCřevna.cz </ code>. If so, remove it, OpenCart uses the dot to separate items and the name is then recognized.
+    </ li>
+</ ol>
 <h2>Informace o modulu</h2>
 <p>Podporované jazyky:</p>
 <ul>
