@@ -40,22 +40,23 @@
     <Strong Style = "Color: Red"> Possible problem: </ strong> If in the OpenCart basket after choosing transport, it claims that it is not selected to the right, check that you do not have the dot mode name, eg <Code> MailCřevna.cz </ code>. If so, remove it, OpenCart uses the dot to separate items and the name is then recognized.
     </ li>
 </ ol>
-<h2>Informace o modulu</h2>
-<p>Podporované jazyky:</p>
-<ul>
-  <li>čeština</li>
-  <li>angličtina</li>
-</ul>
-<h3>Podporované verze:</h3>
-<ul>
-  <li>Opencart 2.0.0 a novější</li>
-  <li>Při problému s použitím v jiné verzi nás kontaktujte na adrese <a href="mailto:technicka.podpora@zasilkovna.cz">technicka.podpora@zasilkovna.cz</a></li>
-</ul>
-<h3>Poskytované funkce:</h3>
-<ul>
-  <li>Nastavení různé ceny pro různé cílové země</li>
-  <li>Nastavení daně dopravy a GEO zóny</li>
-  <li>Doprava zdarma od zadané ceny objednávky</li>
-  <li>Cílová pobočka je uvedena v poznámce objednávky</li>
-</ul>
-<p>Pro provázání dopravy a platby doporučujeme použít modul, který naleznete <a targer='_blank' href="http://www.opencart.com/index.php?route=extension/extension/info&amp;extension_id=11301&amp;filter_search=gop">na této stránce</a></p>
+Module information
+
+Supported languages:
+
+     Czech
+     English
+
+Supported versions:
+
+     OpenCart 2.0.0 and later
+     When using the use in another version, contact us at Technika.podpora@zasilkovna.cz
+
+Provided functions:
+
+     Setting different prices for different target countries
+     Setting up traffic tax and geo zones
+     Free shipping from the specified order price
+     The target branch is listed in the order note
+
+We recommend using the module that you can find on this page for interconnecting traffic and payments
