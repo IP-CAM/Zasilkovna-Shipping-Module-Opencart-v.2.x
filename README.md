@@ -1,7 +1,7 @@
 # [DEPRECATED] - The module is no longer maintained / no Longer Actively Maintained
 
-<H1> Module for OpenCart 2 </ h1>
-<H2> Installation </ h2>
+# Module for OpenCart 2
+# Installation
 <ol style = "color: black;">
   <li>
     <Ul>
