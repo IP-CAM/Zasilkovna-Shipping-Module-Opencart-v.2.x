@@ -1,5 +1,4 @@
-# [DEPRECATED] - The module is no longer maintained / no Longer Actively Maintained
-Module for OpenCart
+# Module for OpenCart
 Installation
 
     Download module file »
@@ -10,12 +9,14 @@ Installation
 
     After installing the module, click the Edit button that appears instead of the Install button
 
-    On the Edit page, enter the traffic name, price, select a country from which they are offered by branches and the traffic method. Next, enter the API key and loosen the entire module. In addition, you can enter traffic tax.
+    On the Edit page, enter the traffic name, price, select a country from which they are offered by 
+    branches and the traffic method. Next, enter the API key and loosen the entire module. In addition, you can enter traffic tax.
 
 
 
     Now the right over the shipbody is offered to your customers. The target branch will always be listed in the order note.
-    Possible problem: If in the OpenCart cart after choosing transport, it claims that it is not selected to the right, check that you do not have a dot mode name, eg MailCřevna.cz. If so, remove it, OpenCart uses the dot to separate items and the name is then recognized.
+    Possible problem: If in the OpenCart cart after choosing transport, it claims that it is not selected to the right, check 
+    that you do not have a dot mode name, eg MailCřevna.cz. If so, remove it, OpenCart uses the dot to separate items and the name is then recognized.
 
 Module information
 
