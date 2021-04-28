@@ -1,7 +1,7 @@
 # Module for OpenCart
 Installation
 
-    Download module file »
+    Download module file
     Copy Content OpenCart-Master to your OpenCart's root directory.
     Log in to the administration, go to Extensions »Shipping and install the module.
 
