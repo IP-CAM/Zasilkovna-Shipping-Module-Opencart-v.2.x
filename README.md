@@ -1,5 +1,3 @@
-# [DEPRECATED] - The module is no longer maintained / no Longer Actively Maintained
-
 # Module for OpenCart 2
 # Installation
 <ol style = "color: black;">
